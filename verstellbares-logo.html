@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+	<style>
+h1 {
+	font-family: trebuchet ms;
+	font-size: 50;
+	color: black;
+}
+
+button {
+	font-family: trebuchet ms;
+	color: #c01c00;
+	font-weight: bold;
+}
+
+p {
+	font-family: trebuchet ms;
+	font-weight: bold;
+}
+</style>
+
+	<h1>Kicktipp-Logo in verschiedenen Größen:</h1>
+	<p id="demo">Bitte trage hier einen Zahlenwert für die gewünschte Größe des Logos/ Icons ein!</p>
+	<p>
+		<input type="radio" name="typ" id="desktop" checked="checked" value="desktop" /> Desktop Logo
+	</p>
+	<p>
+		<input type="radio" name="typ" id="app" value="app" /> App Icon <br> <br>
+	</p>
+	<p>
+		<input type="text" id="breite" size="5" value="" />
+	</p>
+	<p>
+		<button type="button" onclick="aendern()">Logo erstellen</button>
+		<br> <br>
+	</p>
+	<div id="desktop-icon" style="display: none">
+		<svg id="svg" width="600" height="200">
+<g>
+  <rect id="viereck" x="0" y="0" width="600" rx="15" ry="15" height="200" fill=rgb(192,28,0)></rect>
+  <text id="schrift" x="30" y="143" font-family="trebuchet ms" font-size="145" fill="white" font-weight="bold">  kicktipp  </text>
+</g></svg>
+	</div>
+
+	<div id="app-icon" style="display: none">
+		<svg id="svg2" width="200" height="200">
+<g>
+  <rect id="wuerfel" x="0" y="0" rx="15" ry="15" width="200" height="200" fill=rgb(192,28,0)></rect>
+  <text id="writing" x="12" y="164" font-family="trebuchet ms" font-size="185" fill="white" font-weight="bold">  kt  </text>
+</g></svg>
+	</div>
+	<script>
+		function aendern()
+		{
+			desktop = document.getElementById("desktop").checked;
+			document.getElementById('desktop-icon').style.display = 'none';
+			document.getElementById('app-icon').style.display = 'none';
+			if (desktop == true)
+			{
+				breite = document.getElementById("breite").value;
+				svg = document.getElementById('svg');
+				viereck = document.getElementById('viereck');
+				schrift = document.getElementById('schrift');
+				viereck.setAttribute("width", breite);
+				svg.setAttribute("width", breite);
+				hoehe = breite / 3;
+				radius = breite / 40;
+				viereck.setAttribute("height", hoehe);
+				viereck.setAttribute("rx", radius);
+				viereck.setAttribute("ry", radius);
+				svg.setAttribute("height", hoehe);
+				schrift.setAttribute("font-size", breite * 0.24166666667);
+				schrift.setAttribute("x", breite * 0.05);
+				schrift.setAttribute("y", hoehe * 0.715);
+				document.getElementById('desktop-icon').style.display = 'block';
+			}
+			else
+			{
+				breite = document.getElementById("breite").value;
+				svg2 = document.getElementById('svg2');
+				wuerfel = document.getElementById('wuerfel');
+				writing = document.getElementById('writing');
+				wuerfel.setAttribute("width", breite);
+				svg2.setAttribute("width", breite);
+				hoehe = breite;
+				radius = breite / 40;
+				wuerfel.setAttribute("height", hoehe);
+				wuerfel.setAttribute("rx", radius);
+				wuerfel.setAttribute("ry", radius);
+				svg2.setAttribute("height", hoehe);
+				writing.setAttribute("font-size", breite * 0.925);
+				writing.setAttribute("x", breite * 0.06);
+				writing.setAttribute("y", hoehe * 0.82);
+				document.getElementById('app-icon').style.display = 'block';
+			}
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First JavaScript</h1>
+<script>
+function buttonclick()
+{
+  var width = document.getElementById('name').value;
+  document.getElementById('demo').innerHTML = getSVG(width);
+  return false;
+}
+function getSVG(width)
+{
+  var text = "Hallo";
+  var imgWidth = width * 2;
+  svg = '<svg width="' + imgWidth + '" height="100">';
+  svg = svg + '<circle cx="' + width + '" cy="50" r="';
+  svg = svg + width;
+  svg = svg + '" stroke="green" stroke-width="4" fill="yellow" />';
+  svg = svg + '</svg>';
+  return svg;
+}
+
+</script>
+<form onsubmit="return buttonclick()">
+<input type="text" id="name" size="20" />
+<button type="button"
+onclick="buttonclick()">
+Sag Hallo</button>
+</form>
+<p id="demo">Hallo, trag einen Wert ein.</p>
+
+</body>
+</html> 
+

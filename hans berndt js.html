@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First JavaScript</h1>
+
+<input type="text" id="breite" size="20" value="10"; value />
+<button type="button" onclick="run()">Verdoppeln</button>
+
+<p id="franz">Hallo, trag einen <b>Zahlenwert</b> ein.</p>
+
+<svg id="svg" width="900" height="900">
+  <circle id="kreis" cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+</svg>
+
+<script>
+function run()
+{
+  paul = document.getElementById("breite");
+  hans = paul.value;
+  hans = verdoppeln(hans);    
+  franz = document.getElementById('franz');
+  paul.value = hans;
+  kreis = document.getElementById('kreis');
+  kreis.setAttribute("r", hans);
+  cx = kreis.getAttribute("cx");
+  cx = parseInt(cx) + hans;
+  kreis.setAttribute("cx", cx);
+  kreis.setAttribute("cy", cx);
+  return false;
+}
+
+
+
+function verdoppeln ( bernd )
+{
+   bernd = bernd * 2;
+   return bernd;
+}
+
+
+</script>
+
+
+</body>
+</html> 
+

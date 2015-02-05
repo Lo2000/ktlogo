@@ -9,6 +9,9 @@ body {
 	width: 750px;
 	margin: 0 auto;
 }
+div.title {
+text-align: center;
+}
 
 h1 {
 	color: black;
@@ -68,7 +71,7 @@ img {
 
 <body>
 
-	<h1 style="text-align: center">Praktikumsbericht - Louisa Lang</h1>
+	<div class="title">Praktikumsbericht - Louisa Lang</div>
 
 	<p style="text-align: center">
 		<b> Praktikum bei <a href="http://www.kicktipp.de/"> kicktipp </a> vom 02.02.2015 bis zum 06.02.2015
@@ -78,18 +81,25 @@ img {
 	<a href="http://www.kicktipp.de/"> <img src="http://info.kicktipp.de/assets/img/jar_cb775422295/assets/img/logos/kicktipp-logo-300x100.png" width="191px" height="66">
 	</a>
 
+	
 	<div style="background-color: lightgrey; padding: 20px; margin: 20px;">
+		
+		<ol id="Inhaltsverzeichnis">
+			
+		</ol>
+	
 		<h1>Einleitung</h1>
+		
 		<p>
-			Da ich mich schon seit längerem für Informatik (Softwareentwicklung) als Berufswunsch interessiere, habe ich mich für ein Praktikum bei der Firma <cite>
-			Kicktipp </cite> entschieden, um diesen Beruf mal von  der praktischen Seite her kennenzulernen. Kicktipp ist eine Webseite, die es Nutzern ermöglicht, kostenfrei
-			an Fußball-Tippspielen mit Freunden, in sogenannten Tipprunden, teilzunehmen. Die Firma, die 1995 gegründet wurde, hat ihren (einzigen) Sitz in Düsseldorf, 
-			und somit keine weitern Niederlassungen.
+			Ich interessiere mich schon seit längerem für Informatik und Softwareentwicklung. Daher habe ich mich für ein Praktikum bei der Firma <cite>
+			Kicktipp </cite> entschieden. Dort möchte ich die praktische Seite des Berufs kennenlernen. Kicktipp ist eine Webseite für private Fußball-Tippspiele.
+			Den Nutzern wird die Gründung eigener sogenannter Tipprunden ermöglicht. Die Firma wurde 1995 gegründet. Sie hat ihren einzigen Sitz in Düsseldorf. Bei Kicktipp arbeiten insgesamt 2 Mitarbeiter.
 		</p>
+		
 		<p>
-			An meinem ersten Tag dort, wurde mir mein "Büro" gezeigt und dann erklärt, was ich in dieser Woche vorraussichtlich  alles machen werde. Als erstes, sollte ich mit
-			HTML, einer Programmiersprache, mit der man z.B. Webseiten erstellen  kann, anfangen und meine eigene kleine Internetseite erstellen. Dabei hat mir eine Art
-			Online-Tutorial geholfen, die  richtigen Begriffe etc. zu verwenden. Ich konnte aber auch jederzeit Fragen stellen, wenn ich etwas nicht direkt  verstanden
+			An meinem ersten Tag wurde mir mein Büro gezeigt. Dann wurde mir erklärt, was ich in dieser Woche vorraussichtlich alles machen werde. Zunächst sollte ich eine Webseite in 
+			HTML erstellen. HTML ist eine Sprache, mit der man Internetseiten erstellen kann. Dabei hat mir eine Art
+			Online-Tutorial geholfen, die  richtigen Begriffe etc. zu verwenden. Ich konnte aber auch jederzeit Fragen stellen, wenn ich etwas nicht direkt verstanden
 			habe.
 		</p>
 
@@ -124,32 +134,33 @@ img {
 			<li>Datei verwenden</li>
 		</ol>
 
-		<h1>1. Lokale HTML Seite erstellen und im Browser anzeigen</h1>
-		<p></p>
+		<h1>Lokale HTML Seite erstellen und im Browser anzeigen</h1>
+			<p></p>
 		
-		<h1>2. SVG verstehen und in HTML einbauen</h1>
-		<p></p>
+		<h1>SVG verstehen und in HTML einbauen</h1>
+			<p></p>
 		
-		<h1>3. Kicktipp Logo als SVG erstellen</h1>
-		<p></p>
+		<h1>Kicktipp Logo als SVG erstellen</h1>
+			<p></p>
 		
-		<h1>4. Lokale HTML Seite erstellen und im Browser anzeigen</h1>
-		<p></p>
-		
-		<h1>1. Lokale HTML Seite erstellen und im Browser anzeigen</h1>
-		<p></p>
+		<h1>Lokale HTML Seite erstellen und im Browser anzeigen</h1>
+			<p></p>
 		
 		<h1>1. Lokale HTML Seite erstellen und im Browser anzeigen</h1>
-		<p></p>
+			<p></p>
 		
 		<h1>1. Lokale HTML Seite erstellen und im Browser anzeigen</h1>
-		<p></p>
+			<p></p>
 		
 		<h1>1. Lokale HTML Seite erstellen und im Browser anzeigen</h1>
-		<p></p>
+			<p></p>
+		
+		<h1>1. Lokale HTML Seite erstellen und im Browser anzeigen</h1>
+			<p></p>
 		
 		<h1>Techniken</h1>
-		<p>Folgende Techniken wurden während des Projekts eingesetzt:</p>
+			<p>Folgende Techniken wurden während des Projekts eingesetzt:</p>
+			
 		<h2>HTML - Hypertext Markup Language</h2>
 
 		<h2>CSS - Cascading Style Sheets</h2>
@@ -158,8 +169,26 @@ img {
 
 		<h2>SVG - Scalable Vector Graphics</h2>
 
-	</div>
+	<script type = "text/javascript">
 
+		function makeInhaltsverzeichnis(){
+			alert("hallo");
+			var chapters = document.getElementsByTagName("h1");
+			var htmlString = "";
+			var number = chapters.length;
+			var anzahl = 0;
+			while (anzahl < number){					
+				var kapitelnummer = "c"+ anzahl;
+				chapters[anzahl].setAttribute('id', kapitelnummer);
+				htmlString = htmlString + '<li><a href=\"#c' + anzahl + '\">' + document.getElementById(kapitelnummer).innerHTML + '<\/a><\/li>';
+				anzahl++;
+			}
+			document.getElementById("Inhaltsverzeichnis").innerHTML = htmlString;
+		}
+		document.onload = makeInhaltsverzeichnis();
+	</script>
+
+	</div>
 </body>
 
 </html>

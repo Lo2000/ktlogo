@@ -9,8 +9,14 @@ body {
 	width: 750px;
 	margin: 0 auto;
 }
+
 div.title {
-text-align: center;
+	text-align: center;
+	color: black;
+	font-family: arial; 
+	font-size 200%;
+	border: 5px solid black;
+	margin: 20px;
 }
 
 h1 {
@@ -172,7 +178,6 @@ img {
 	<script type = "text/javascript">
 
 		function makeInhaltsverzeichnis(){
-			alert("hallo");
 			var chapters = document.getElementsByTagName("h1");
 			var htmlString = "";
 			var number = chapters.length;

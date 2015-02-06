@@ -1,0 +1,6 @@
+<svg id="svg" height="333.3333333333333" width="1000">
+<g>
+<rect id="viereck" fill="rgb(192,28,0)" height="333.3333333333333" ry="25" rx="25" width="1000" y="0" x="0">
+<text id="schrift" font-weight="bold" fill="white" font-size="241.66666667" font-family="trebuchet ms" y="238.33333333333331" x="50"> kicktipp </text>
+</g>
+</svg>

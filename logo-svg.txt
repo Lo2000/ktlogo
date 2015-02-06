@@ -1,0 +1,13 @@
+<svg id="svg" width="600" height="200">
+<g>
+  <rect id="viereck" x="0" y="0" width="600" rx="15" ry="15" height="200" fill=rgb(192,28,0)></rect>
+  <text id="schrift" x="30" y="143" font-family="trebuchet ms" font-size="145" fill="white" font-weight="bold">  kicktipp  </text>
+</g></svg>
+	</div>
+
+	<div id="app-icon" style="display: none">
+		<svg id="svg2" width="200" height="200">
+<g>
+  <rect id="wuerfel" x="0" y="0" rx="15" ry="15" width="200" height="200" fill=rgb(192,28,0)></rect>
+  <text id="writing" x="12" y="164" font-family="trebuchet ms" font-size="185" fill="white" font-weight="bold">  kt  </text>
+</g></svg>
